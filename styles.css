@@ -2,6 +2,28 @@
 	box-sizing: border-box;
 }
 
+body {
+	overflow: hidden;
+	font-family: 'Ubuntu', sans-serif;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.box>i {
+	font-size: 50px;
+}
+
+button {
+	background-color: inherit;
+	color: white;
+	padding: 5px;
+	font-size: 14px;
+	border: 2px solid white;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
 .wrapper {
   min-width: 100vh;
   min-height: 100vh;
@@ -9,10 +31,19 @@
 }
 
 .box {
-  background-color: green;
-  border: 2px solid #605d9c;
   flex: 1;
   flex-basis: 33.3%;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease-in-out;
+	padding: 30px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.box:hover {
+  transform: scale(1.05, 1.05);
 }
 
 .left {
@@ -28,41 +59,132 @@
 
 #div1 {
   flex-basis: 66.6%;
-  /*flex: 2;*/
+  background-color: #3949ab;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	position: relative;
 }
 
 #div2 {
   /*flex: 1;*/
-  background-color: orange;
+  background-color: #bf360c;
 }
 
 #div3 {
   /*flex: 1;*/
+  background-color: #ad1457;
 }
 
 #div4 {
   /*flex: 1;*/
-  background-color: orange;
+  background-color: #009688;
 }
 
 #div5 {
   /*flex: 1;*/
+  background-color: #3949ab;
 }
 
 #div6 {
   /*flex: 1;*/
-  background-color: orange;
+  background-color: #bf360c;
 }
 
 #div7 {
   /*flex: 1;*/
+  background-color: #ad1457;
 }
 
 #div8 {
   /*flex: 1;*/
-  background-color: orange;
+  background-color: #009688;
 }
 
 #div9 {
-  background-color: brown;
+  flex: 1;
+  background: url("neo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.tiny-neo {
+	display: none;
+	width: 250px;
+}
+
+
+@media (max-width: 1100px){
+	#div1 {
+	  flex-basis: 100%;
+		/*order: -2*/
+	}
+
+	#div7 {
+		order: 1;
+	}
+
+	#div8 {
+		background-color: #3949ab;
+	}
+}
+
+
+	@media (max-width: 950px){
+
+
+				#div1 {
+				  flex-basis: 100%;
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+
+				#div1>div{
+					flex-basis: 100%;
+				}
+
+
+		.tiny-neo {
+			display: block;
+			float: right;
+			flex-basis: 250px;
+		}
+
+		.left {
+		  flex-wrap: nowrap;
+			display:block;
+			width: 100%;
+		}
+
+		.right {
+			display: none;
+		}
+
+		.box>i {
+			font-size: 30px;
+			margin-right: 10px;
+		}
+
+		.box {
+			flex-direction: row;
+			padding: 20px;
+		}
+
+		.wrapper {
+		  min-width: 100%;
+		  min-height: 100%;
+		}
+
+		/*flex-basis: 66.6%;
+	  background-color: #3949ab;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-direction: column;
+		position: relative;*/
+
+		/*#div9{
+			background-size: contain;
+		}*/
+
 }
